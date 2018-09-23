@@ -23,18 +23,10 @@ class tree{
   //   return temp;
   // };
 
-  // void inorder(Node *t){
-  //   if(t){
-  //       inorder(t->left);
-  //       printf("%c ", t->data);
-  //       inorder(t->right);
-  //   }
-  // }
-
-  int strToInt(string x){
+  double strToFloat(string x){
     char y=x[0];
 
-    return int(y)-48;
+    return double(y)-48;
   }
 
 
@@ -49,13 +41,56 @@ class tree{
         char d=ecu[i+1];
         string right(1,d);
 
-        
+        Node* toleft = new Node(left);
+        Node* toright = new Node(right);
+        head -> left=toleft;
+        head -> right=toright;
+        cout << strToFloat(toleft -> data) + strToFloat(toright -> data);
+      }
+      if (ecu[i] == '-'){
+        Node* tohead = new Node("-");
+        head = tohead;
+
+        char c=ecu[i-1];
+        string left(1,c);
+        char d=ecu[i+1];
+        string right(1,d);
 
         Node* toleft = new Node(left);
         Node* toright = new Node(right);
         head -> left=toleft;
         head -> right=toright;
-        cout << strToInt(toleft -> data) + strToInt(toright -> data);
+        cout << strToFloat(toleft -> data) - strToFloat(toright -> data);
+      }
+      if (ecu[i] == '*'){
+        Node* tohead = new Node("*");
+        head = tohead;
+
+        char c=ecu[i-1];
+        string left(1,c);
+        char d=ecu[i+1];
+        string right(1,d);
+
+        Node* toleft = new Node(left);
+        Node* toright = new Node(right);
+        head -> left=toleft;
+        head -> right=toright;
+        cout << strToFloat(toleft -> data) * strToFloat(toright -> data);
+      }
+      if (ecu[i] == '/'){
+        Node* tohead = new Node("/");
+        head = tohead;
+
+        char c=ecu[i-1];
+        string left(1,c);
+        char d=ecu[i+1];
+        string right(1,d);
+
+        Node* toleft = new Node(left);
+        Node* toright = new Node(right);
+        head -> left=toleft;
+        head -> right=toright;
+        cout << strToFloat(toleft -> data) / strToFloat(toright -> data);
       }
     }
   }

@@ -28,6 +28,6 @@ int main(int argc, char const *argv[]) {
 
 int main(int argc, char const *argv[]) {
   tree Tree;
-  Tree.constructTree("10+2");
+  Tree.constructTree("5/2");
   return 0;
 }
