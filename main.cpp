@@ -26,8 +26,17 @@ int main(int argc, char const *argv[]) {
   return EXIT_SUCCESS;
 }*/
 
+// Faltan operaciones grandes, variables, operadores unarios
 int main(int argc, char const *argv[]) {
+    string equation;
+    if (argc == 2) {
+        equation = argv[1];
+    }
+    else {
+      throw "One argument expected";
+    }
   tree Tree;
-  Tree.constructTree("5/2");
+  Tree.constructTree(equation);
+  cout << endl;
   return 0;
 }

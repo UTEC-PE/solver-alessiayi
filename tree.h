@@ -45,7 +45,7 @@ class tree{
         Node* toright = new Node(right);
         head -> left=toleft;
         head -> right=toright;
-        cout << strToFloat(toleft -> data) + strToFloat(toright -> data);
+        cout << strToFloat(toleft -> data) + strToFloat(toright -> data); // No tiene mucho sentido que crees tus nodos si solo vas a operar la data
       }
       if (ecu[i] == '-'){
         Node* tohead = new Node("-");
